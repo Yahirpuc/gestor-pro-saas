@@ -1,3 +1,4 @@
+/* @refresh reset */
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import { api } from '../lib/api';
 
@@ -35,9 +36,11 @@ export function AuthProvider({ children }) {
   }, [loadCompany]);
 
   useEffect(() => {
+    console.log('AUTH EFFECT RUNNING');
     bootstrap();
     loadCompany();
-  }, [bootstrap, loadCompany]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const login = async (email, password) => {
     const res = await api.auth.login({ email, password });

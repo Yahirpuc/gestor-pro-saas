@@ -1,3 +1,4 @@
+import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { AlertTriangle, Loader2, Search, X } from 'lucide-react';
 import { useEffect, useId, useRef } from 'react';
@@ -64,11 +65,77 @@ export function Textarea({ className, rows = 4, ...props }) {
   return <textarea rows={rows} className={cn('field resize-none', className)} {...props} />;
 }
 
-export function Select({ className, children, ...props }) {
+export function Select({ value, onChange, children, className, disabled, ...props }) {
+  const [open, setOpen] = React.useState(false);
+  const ref = React.useRef(null);
+
+  const options = React.useMemo(() => {
+    const opts = [];
+    React.Children.toArray(children).forEach((child) => {
+      if (!child || typeof child !== 'object') return;
+      if (child.type === 'option') {
+        opts.push({ value: child.props.value, label: child.props.children });
+      } else if (child.props && child.props.children) {
+        React.Children.toArray(child.props.children).forEach((c) => {
+          if (c && typeof c === 'object' && c.type === 'option') {
+            opts.push({ value: c.props.value, label: c.props.children });
+          }
+        });
+      }
+    });
+    return opts;
+  }, [children]);
+
+  const selected = options.find((o) => String(o.value) === String(value));
+
+  React.useEffect(() => {
+    const handler = (e) => {
+      if (ref.current && !ref.current.contains(e.target)) setOpen(false);
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, []);
+
+  const handleSelect = (v) => {
+    setOpen(false);
+    if (onChange) onChange({ target: { value: v } });
+  };
+
   return (
-    <select className={cn('field cursor-pointer appearance-none bg-no-repeat pr-9', className)} {...props}>
-      {children}
-    </select>
+    <div ref={ref} className={cn('relative', className)}>
+      <button
+        type="button"
+        disabled={disabled}
+        onClick={() => !disabled && setOpen((o) => !o)}
+        className={cn('field cursor-pointer appearance-none pr-9 text-left', className)}
+        {...props}
+      >
+        {selected ? selected.label : options[0]?.label ?? ''}
+      </button>
+      <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400">
+        ▾
+      </span>
+      {open && (
+        <ul className="absolute z-50 mt-1 max-h-60 w-full overflow-auto rounded-xl border border-zinc-200 bg-white py-1 shadow-lg dark:border-white/10 dark:bg-zinc-900">
+          {options.map((o, i) => (
+            <li key={`${String(o.value)}-${i}`}>
+              <button
+                type="button"
+                onClick={() => handleSelect(o.value)}
+                className={cn(
+                  'w-full px-3.5 py-2 text-left text-sm transition hover:bg-zinc-100 dark:hover:bg-white/[0.06]',
+                  String(o.value) === String(value)
+                    ? 'bg-zinc-100 font-medium dark:bg-white/[0.08]'
+                    : ''
+                )}
+              >
+                {o.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
 

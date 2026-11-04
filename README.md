@@ -294,9 +294,9 @@ Los estilos de los PDFs generados por el servicio Python se configuran en:
 Creado por **Yahir Alberto Ordoñez Puc**.
 
 - GitHub: https://github.com/Yahirpuc
-- LinkedIn: https://linkedin.com/in/yahir-ordonez
-- Twitter/X: https://twitter.com/yahir_ordonez
-- Email: yahir.ordonez@example.com
+- LinkedIn: [https://linkedin.com/in/yahir-ordonez](https://www.linkedin.com/in/yahir-ordoñez-97aa76302/)
+- 
+- Email: yahirordzdev@gmail.com
 
 ---
 

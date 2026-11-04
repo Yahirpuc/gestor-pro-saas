@@ -1,4 +1,4 @@
-# gestor-pro-saas
+# gestor-pro-saas "Orbit"
 
 Plataforma modular y open source para la gestión de clientes, proyectos, propuestas y contratos, con calendario integrado y generación avanzada de documentos PDF. Diseñada para desarrolladores independientes, agencias y profesionales que quieren controlar su negocio sin depender de servicios de terceros.
 
@@ -295,7 +295,6 @@ Creado por **Yahir Alberto Ordoñez Puc**.
 
 - GitHub: https://github.com/Yahirpuc
 - LinkedIn: [https://linkedin.com/in/yahir-ordonez](https://www.linkedin.com/in/yahir-ordoñez-97aa76302/)
-- 
 - Email: yahirordzdev@gmail.com
 
 ---

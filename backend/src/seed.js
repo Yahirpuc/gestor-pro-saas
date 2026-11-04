@@ -16,10 +16,10 @@ async function seed() {
   await sequelize.sync({ force: true });
   console.log('Database reset.');
 
-  await CompanySetting.create({ id: 1, name: 'Norbe', tagline: 'Software Studio', accentColor: '#6366f1' });
+  await CompanySetting.create({ id: 1, name: 'Orbit', tagline: 'Software Studio', accentColor: '#6366f1' });
 
   const hashed = await bcrypt.hash('admin123', 10);
-  await User.create({ name: 'Administrador Norbe', firstName: 'Administrador', lastName: 'Norbe', email: 'admin@norbe.local', password: hashed, role: 'admin' });
+  await User.create({ name: 'Administrador Orbit', firstName: 'Administrador', lastName: 'Orbit', email: 'admin@orbit.local', password: hashed, role: 'admin' });
 
   const clients = await Client.bulkCreate([
     {
@@ -319,7 +319,7 @@ async function seed() {
   ]);
 
   console.log('✔ Seed completed: 6 clients, 6 projects, 4 proposals, 4 contracts, 7 events.');
-  console.log('✔ Default user: admin@norbe.local / admin123');
+  console.log('✔ Default user: admin@orbit.local / admin123');
   await sequelize.close();
 }
 

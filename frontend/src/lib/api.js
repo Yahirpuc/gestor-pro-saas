@@ -11,7 +11,7 @@ export class ApiError extends Error {
 }
 
 async function request(path, { method = 'GET', body, signal } = {}) {
-  const token = localStorage.getItem('norbe_token');
+  const token = localStorage.getItem('orbit_token');
   const headers = body ? { 'Content-Type': 'application/json' } : {};
   if (token) headers.Authorization = 'Bearer ' + token;
   const res = await fetch(`${API_BASE}${path}`, {

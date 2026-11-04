@@ -51,7 +51,7 @@ export default function ProposalDocument({ proposal }) {
       </div>
 
       <footer className="mt-6 border-t border-zinc-100 pt-3 text-[9px] text-zinc-400">
-        Documento generado con Norbe Studio OS · Propuesta comercial
+        Documento generado con Orbit Studio OS · Propuesta comercial
       </footer>
     </article>
   );

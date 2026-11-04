@@ -8,7 +8,7 @@ export default function Login() {
   const navigate = useNavigate();
   const [mode, setMode] = useState('login');
   const [name, setName] = useState('');
-  const [email, setEmail] = useState('admin@norbe.local');
+  const [email, setEmail] = useState('admin@orbit.local');
   const [password, setPassword] = useState('admin123');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -78,7 +78,7 @@ export default function Login() {
         </form>
 
         <p className="mt-6 text-center text-xs text-zinc-400">
-          Demo: admin@norbe.local / admin123
+          Demo: admin@orbit.local / admin123
         </p>
       </div>
     </div>

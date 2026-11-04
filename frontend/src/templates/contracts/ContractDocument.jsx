@@ -33,7 +33,7 @@ export default function ContractDocument({ contract }) {
             </span>
             <div>
               <p className="font-mono text-[9px] uppercase tracking-[0.22em] text-zinc-400">
-                Norbe
+                Orbit
               </p>
               <p className="text-[10px] text-zinc-400">{templateLabel(contract.template)}</p>
             </div>
@@ -75,7 +75,7 @@ export default function ContractDocument({ contract }) {
       </div>
 
       <footer className="mt-6 border-t border-zinc-100 pt-3 text-[9px] text-zinc-400">
-        Documento generado con Norbe · {templateLabel(contract.template)}
+        Documento generado con Orbit · {templateLabel(contract.template)}
       </footer>
     </article>
   );

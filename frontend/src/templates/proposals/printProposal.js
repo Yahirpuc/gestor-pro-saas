@@ -30,11 +30,11 @@ export function printProposal(proposal) {
     footer{margin-top:36px;border-top:1px solid #d4d4d8;padding-top:10px;font-size:9px;color:#a1a1aa;font-family:system-ui}
   </style></head>
   <body>
-    <p class="brand">Norbe Studio OS · Documento confidencial</p>
+    <p class="brand">Orbit Studio OS · Documento confidencial</p>
     <h1>${esc(proposal.title)}</h1>
     <div class="meta">${metaRows}</div>
     <pre>${esc(proposal.content || 'Sin contenido')}</pre>
-    <footer>Generado con Norbe Studio OS · Propuesta comercial</footer>
+    <footer>Generado con Orbit Studio OS · Propuesta comercial</footer>
   </body></html>`);
   win.document.close();
   win.focus();

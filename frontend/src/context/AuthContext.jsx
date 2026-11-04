@@ -13,12 +13,12 @@ export function AuthProvider({ children }) {
       const c = await api.company.get();
       setCompany(c);
     } catch {
-      setCompany({ name: 'Norbe' });
+      setCompany({ name: 'Orbit' });
     }
   }, []);
 
   const bootstrap = useCallback(async () => {
-    const token = localStorage.getItem('norbe_token');
+    const token = localStorage.getItem('orbit_token');
     if (!token) {
       setLoading(false);
       return;
@@ -27,7 +27,7 @@ export function AuthProvider({ children }) {
       const u = await api.auth.me();
       setUser(u);
     } catch {
-      localStorage.removeItem('norbe_token');
+      localStorage.removeItem('orbit_token');
     } finally {
       setLoading(false);
     }
@@ -41,7 +41,7 @@ export function AuthProvider({ children }) {
 
   const login = async (email, password) => {
     const res = await api.auth.login({ email, password });
-    localStorage.setItem('norbe_token', res.token);
+    localStorage.setItem('orbit_token', res.token);
     setUser(res.user);
     await loadCompany();
     return res.user;
@@ -49,7 +49,7 @@ export function AuthProvider({ children }) {
 
   const register = async (name, email, password) => {
     const res = await api.auth.register({ name, email, password });
-    localStorage.setItem('norbe_token', res.token);
+    localStorage.setItem('orbit_token', res.token);
     setUser(res.user);
     await loadCompany();
     return res.user;
@@ -62,7 +62,7 @@ export function AuthProvider({ children }) {
   };
 
   const logout = () => {
-    localStorage.removeItem('norbe_token');
+    localStorage.removeItem('orbit_token');
     setUser(null);
   };
 

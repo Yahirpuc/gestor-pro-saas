@@ -4,7 +4,7 @@ const asyncHandler = require('../utils/asyncHandler');
 async function getOrCreate() {
   let setting = await CompanySetting.findByPk(1);
   if (!setting) {
-    setting = await CompanySetting.create({ id: 1, name: 'Norbe' });
+    setting = await CompanySetting.create({ id: 1, name: 'Orbit' });
   }
   return setting;
 }

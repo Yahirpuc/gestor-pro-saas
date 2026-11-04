@@ -124,7 +124,7 @@ export default function Proposals() {
       const payload = {
         ...proposal,
         signer: signerName,
-        companyName: company?.name || 'Norbe',
+        companyName: company?.name || 'Orbit',
       };
       const blob = await generateProposalPdf(payload);
       const url = URL.createObjectURL(blob);

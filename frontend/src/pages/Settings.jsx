@@ -54,13 +54,13 @@ export default function Settings() {
   const [apiStatus, setApiStatus] = useState('checking');
   const [pdfStatus, setPdfStatus] = useState('checking');
 
-  const [companyName, setCompanyName] = useState(company?.name || 'Norbe');
+  const [companyName, setCompanyName] = useState(company?.name || 'Orbit');
   const [tagline, setTagline] = useState(company?.tagline || '');
   const [savingCompany, setSavingCompany] = useState(false);
   const [companyMsg, setCompanyMsg] = useState('');
 
   useEffect(() => {
-    setCompanyName(company?.name || 'Norbe');
+    setCompanyName(company?.name || 'Orbit');
     setTagline(company?.tagline || '');
   }, [company]);
 
@@ -120,7 +120,7 @@ export default function Settings() {
                 value={companyName}
                 onChange={(e) => setCompanyName(e.target.value)}
                 className="field w-full"
-                placeholder="Norbe"
+                placeholder="Orbit"
               />
             </div>
             <div className="sm:col-span-2">

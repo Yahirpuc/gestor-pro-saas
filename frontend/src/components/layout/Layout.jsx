@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { Globe, Link2, LucideMail, LucideShare2 } from 'lucide-react';
 import { cn } from '../../lib/utils';
 import CommandPalette from './CommandPalette';
 import Sidebar from './Sidebar';
@@ -9,7 +8,7 @@ import Topbar from './Topbar';
 
 export default function Layout() {
   const { company, user, updateProfile } = useAuth();
-  const companyName = company?.name || 'Norbe';
+  const companyName = company?.name || 'Orbit';
   const [collapsed, setCollapsed] = useState(() => localStorage.getItem('orbit-sidebar') === '1');
   const [mobileOpen, setMobileOpen] = useState(false);
   const [paletteOpen, setPaletteOpen] = useState(false);
@@ -82,23 +81,9 @@ export default function Layout() {
           <Outlet />
         </main>
         <footer className="border-t border-zinc-200/60 px-6 py-4 text-center text-[11px] text-zinc-400 dark:border-white/[0.05] dark:text-zinc-600">
-          <p className="mb-2">
+          <p>
             {companyName} · Creado por <strong className="text-zinc-600 dark:text-zinc-300">Yahir Alberto Ordoñez Puc</strong>
           </p>
-          <div className="flex items-center justify-center gap-3">
-            <a href="https://github.com/yahir-ordonez" target="_blank" rel="noreferrer" className="transition hover:text-zinc-800 dark:hover:text-zinc-200" aria-label="GitHub">
-              <LucideShare2 size={15} />
-            </a>
-            <a href="https://linkedin.com/in/yahir-ordonez" target="_blank" rel="noreferrer" className="transition hover:text-zinc-800 dark:hover:text-zinc-200" aria-label="LinkedIn">
-              <Link2 size={15} />
-            </a>
-            <a href="https://twitter.com/yahir_ordonez" target="_blank" rel="noreferrer" className="transition hover:text-zinc-800 dark:hover:text-zinc-200" aria-label="Twitter">
-              <Globe size={15} />
-            </a>
-            <a href="mailto:yahir.ordonez@example.com" className="transition hover:text-zinc-800 dark:hover:text-zinc-200" aria-label="Email">
-              <LucideMail size={15} />
-            </a>
-          </div>
         </footer>
       </div>
 

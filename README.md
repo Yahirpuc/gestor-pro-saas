@@ -150,7 +150,7 @@ cd backend
 npm run seed
 ```
 
-Esto crea el usuario administrador por defecto: `admin@norbe.local` / `admin123`.
+Esto crea el usuario administrador por defecto: `admin@orbit.local` / `admin123`.
 
 ### 5. Ejecutar en desarrollo
 

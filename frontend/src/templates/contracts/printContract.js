@@ -34,7 +34,7 @@ export function printContract(contract) {
   <html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>${esc(contract.title || 'Contrato')} - Norbe</title>
+    <title>${esc(contract.title || 'Contrato')} - Orbit</title>
     <style>
       :root {
         --primary: #09090b;
@@ -173,7 +173,7 @@ export function printContract(contract) {
   </head>
   <body>
     <div class="brand-header">
-      <span>Norbe</span>
+      <span>Orbit</span>
       <span>Documento Confidencial</span>
     </div>
 
@@ -187,7 +187,7 @@ export function printContract(contract) {
 
     <div class="signatures">
       <div class="signature-box">
-        <p class="sig-name">Por Norbe</p>
+        <p class="sig-name">Por Orbit</p>
         <p>Representante Autorizado</p>
       </div>
       <div class="signature-box">
@@ -197,7 +197,7 @@ export function printContract(contract) {
     </div>
 
     <footer>
-      <span>Generado por Norbe</span>
+      <span>Generado por Orbit</span>
       <span>${esc(templateLabel(contract.template))}</span>
     </footer>
   </body>

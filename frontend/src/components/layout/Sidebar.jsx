@@ -38,7 +38,7 @@ const groups = [
 
 export default function Sidebar({ collapsed, setCollapsed, mobileOpen, setMobileOpen }) {
   const { company, logout } = useAuth();
-  const companyName = company?.name || 'Norbe';
+  const companyName = company?.name || 'Orbit';
 
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
 

@@ -123,7 +123,7 @@ export default function Contracts() {
       const payload = {
         ...contract,
         signer: signerName,
-        companyName: company?.name || 'Norbe',
+        companyName: company?.name || 'Orbit',
       };
       const blob = await generateContractPdf(payload);
       const url = URL.createObjectURL(blob);

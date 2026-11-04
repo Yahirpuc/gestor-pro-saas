@@ -42,7 +42,7 @@ export default function Topbar({ onOpenMobile, onOpenPalette }) {
   const navigate = useNavigate();
   const { isDark, toggleTheme } = useTheme();
   const { company, user, logout } = useAuth();
-  const companyName = company?.name || 'Norbe';
+  const companyName = company?.name || 'Orbit';
   const userName = user?.name || 'Administrador';
   const userEmail = user?.email || '';
   const [notifOpen, setNotifOpen] = useState(false);
